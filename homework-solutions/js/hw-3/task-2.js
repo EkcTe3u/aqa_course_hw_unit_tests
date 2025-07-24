@@ -4,3 +4,12 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 
 */
+
+function conctaination(n) {
+  if (0 <= n && n <= 9) {
+    console.log(Number(`${n}`) + Number(`${n}${n}`) + Number(`${n}${n}${n}`));
+  } else {
+    console.log(`n must be between 0 to 9`);
+  }
+}
+// conctaination(2);
