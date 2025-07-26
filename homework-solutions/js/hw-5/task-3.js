@@ -6,5 +6,20 @@
 const word = 'hello';
 
 let vowelsAndConsonantsResult = '';
+let spliteWord = word.split('');
+console.log(spliteWord);
+let counterVowels = 0;
+const vowels = 'aeiou';
+let counterConsonants = 0;
+
+spliteWord.forEach((element) => {
+  if (vowels.includes(element)) {
+    counterVowels++;
+  } else {
+    counterConsonants++;
+  }
+});
+
+vowelsAndConsonantsResult = `${word} contains ${counterVowels} vowels and ${counterConsonants} consonants`;
 
 export { vowelsAndConsonantsResult };
