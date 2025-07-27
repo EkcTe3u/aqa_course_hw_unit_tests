@@ -7,15 +7,16 @@ const word = 'hello';
 
 let vowelsAndConsonantsResult = '';
 let spliteWord = word.split('');
-console.log(spliteWord);
 let counterVowels = 0;
 const vowels = 'aeiou';
+const consonants = 'bcdfghjklmnpqrstvwxyz';
 let counterConsonants = 0;
 
 spliteWord.forEach((element) => {
   if (vowels.includes(element)) {
     counterVowels++;
-  } else {
+  }
+  if (consonants.includes(element)) {
     counterConsonants++;
   }
 });
