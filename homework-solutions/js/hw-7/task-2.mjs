@@ -7,14 +7,14 @@ function isPalindrom(word) {
   if (typeof word !== 'string') {
     return false;
   }
-  let toLowerCaseWord = word.toLowerCase();
-  let toSpliteWord = toLowerCaseWord.split('');
-  let length = toSpliteWord.length;
-  let backWord = [];
+  const toLowerCaseWord = word.toLowerCase();
+  const toSpliteWord = toLowerCaseWord.split('');
+  const length = toSpliteWord.length;
+  const backWord = [];
   for (let i = length; i > 0; i -= 1) {
     backWord.push(toSpliteWord[i - 1]);
   }
-  let joinWord = backWord.join('');
+  const joinWord = backWord.join('');
   return joinWord === toLowerCaseWord;
 }
 
@@ -33,9 +33,9 @@ function findLongestWords(sentence) {
   if (sentence === '') {
     return longestWords;
   }
-  let deleteSpace = sentence.replace(/\s+/g, ' ').trim();
-  let arrayOfWords = deleteSpace.split(' ');
-  let sortedArray = arrayOfWords.sort((a, b) => b.length - a.length);
+  const deleteSpace = sentence.replace(/\s+/g, ' ').trim();
+  const arrayOfWords = deleteSpace.split(' ');
+  const sortedArray = arrayOfWords.sort((a, b) => b.length - a.length);
 
   longestWords.push(sortedArray[0]);
   for (let i = 0; i < sortedArray.length - 1; i++) {
