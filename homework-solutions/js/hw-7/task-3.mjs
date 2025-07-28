@@ -9,7 +9,15 @@
 */
 
 function digitalRoot(number) {
-  // Ваш код
+  let sum = 0;
+  let newArray = number.toString().split('');
+  newArray.forEach((element) => {
+    sum += Number(element);
+  });
+  if (sum <= 9) {
+    return sum;
+  }
+  return digitalRoot(sum);
 }
 
 export { digitalRoot };
