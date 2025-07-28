@@ -30,7 +30,7 @@ function findLongestWords(sentence) {
   if (typeof sentence !== 'string') {
     return longestWords;
   }
-  if (sentence === '') {
+  if (sentence.trim() === '') {
     return longestWords;
   }
   const deleteSpace = sentence.replace(/\s+/g, ' ').trim();
