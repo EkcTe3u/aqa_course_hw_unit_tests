@@ -5,13 +5,8 @@
   - Например: mergeArrays([1,2], [3,4], [5,6]) // [1,2,3,4,5,6]
   - Решить с использованием Spread operator
 */
-const firstArray = [1, 2];
-const secondArray = [3, 4];
-const thirdArray = [5, 6];
-let mergeResult;
 function mergeArrays(...arg) {
-  mergeResult = [].concat(...arg);
-  return mergeResult;
+  return [].concat(...arg);
 }
 
 /*
@@ -22,17 +17,13 @@ function mergeArrays(...arg) {
   */
 const sentence = 'I am super engineer';
 function devideBy(sentence) {
-  let replaceSentence = sentence.replace(/\s+/g, ' ').trim();
+  allLowCase = sentence.toLowerCase();
+  let replaceSentence = allLowCase.replace(/\s+/g, ' ').trim();
   let splitedSentence = replaceSentence.split(' ');
   let allLowCase = [];
   let newCaseSentence = [];
 
-  splitedSentence.forEach((element) => {
-    element = element.toLowerCase();
-    allLowCase.push(element);
-  });
-
-  allLowCase.forEach((element, index) => {
+  splitedSentence.forEach((element, index) => {
     if (index === 0) {
       element = element.charAt(0).toLowerCase() + element.slice(1);
       newCaseSentence.push(element);
@@ -41,8 +32,7 @@ function devideBy(sentence) {
       newCaseSentence.push(element);
     }
   });
-  const resultSentence = newCaseSentence.join('_');
-  return resultSentence;
+  return newCaseSentence.join('_');
 }
 
 /*
