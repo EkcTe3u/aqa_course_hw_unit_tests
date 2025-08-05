@@ -39,9 +39,8 @@ for (const [key, value] of Object.entries(character)) {
 }
 
 // 4
-let hasSalaryKey1stOption;
-hasSalaryKey1stOption = 'salary' in character;
-let hasSalaryKey2ndOption;
-hasSalaryKey2ndOption = character.hasOwnProperty('salary');
+
+const hasSalaryKey1stOption = 'salary' in character;
+const hasSalaryKey2ndOption = Object.hasOwn(character, 'salary');
 
 export { keyWithFourChars, stringValues, hasSalaryKey1stOption, hasSalaryKey2ndOption, keyValuePairs, logSpy };
