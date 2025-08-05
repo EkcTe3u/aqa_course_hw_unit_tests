@@ -18,8 +18,27 @@ const words = [
   'queue',
 ];
 
-function sortedByVowels(wordsArr) {
-  // Ваш код
+const vowels = 'aeiou';
+
+function checkVowels(word) {
+  let counterVowels = 0;
+  for (let i = 0; i < word.length; i++) {
+    if (vowels.includes(word[i])) {
+      counterVowels++;
+    }
+  }
+  return counterVowels;
+}
+
+function sortedByVowels(words) {
+  let result = [];
+  if (words.length === 0) {
+    return result;
+  }
+  {
+    const sorted = [...words].sort((a, b) => checkVowels(a) - checkVowels(b));
+    return sorted;
+  }
 }
 
 export { sortedByVowels };
