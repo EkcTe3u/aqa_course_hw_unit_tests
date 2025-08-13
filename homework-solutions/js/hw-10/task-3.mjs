@@ -1,3 +1,4 @@
+'use strict';
 /*
   Создайте функцию, принимающую число n, которая при каждом вызове будет
   генерировать случайное число [1 - n] включительно. 
@@ -7,7 +8,7 @@
   Задачу решить через замыкания
   Например n = 5, функция выведет 5 чисел 1-5, а после будет выводить сугубо 'All numbers were received'
 
-  Рекоммендации:
+  Рекомендации:
    - Для генерации числа в границах воспользуйтесь методом:
       function getRandomArbitrary(min, max) {
         return Math.random() * (max - min) + min;
@@ -20,7 +21,18 @@ function getRandomArbitrary(min, max) {
 }
 
 function uniqueRandomGenerator(n) {
-  // Ваш код
+  const numbers = [];
+  for (let i = 1; i <= n; i++) {
+    numbers.push(i);
+  }
+  return function newNumber() {
+    if (numbers.length === 0) {
+      return 'All numbers were received';
+    }
+    const randomIndex = Math.floor(getRandomArbitrary(0, numbers.length));
+    const number = numbers.splice(randomIndex, 1)[0];
+    return number;
+  };
 }
 
 export { uniqueRandomGenerator };
