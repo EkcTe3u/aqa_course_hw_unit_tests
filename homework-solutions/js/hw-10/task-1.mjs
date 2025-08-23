@@ -25,8 +25,7 @@ let qa = {
 let anotherQa = { name: 'Gleb', age: 12, salary: 0 };
 
 // Используйте bind с greetingWord "Hello"
-let bindResult = qa.getInfo.bind(anotherQa, 'Hello');
-bindResult = bindResult();
+let bindResult = qa.getInfo.bind(anotherQa)('Hello');
 
 // Используйте call с greetingWord "Hi"
 let callResult = qa.getInfo.call(anotherQa, 'Hi');
