@@ -1,3 +1,5 @@
+'use strict';
+
 /*
   У вас есть массив чисел. 
   Напиши функцию countOccurrences, которая принимает массив чисел и
@@ -7,8 +9,33 @@
   Ожидается: { 1: 1, 2: 2, 3: 1, 4: 3, 5: 1 }
 */
 
-function countOccurrences(arr) {
-  // ваш код
+const arr = [1, 2, 2, 3, 4, 4, 4, 5];
+function countOccurrences(arr = []) {
+  const uniqueArray = [...new Set(arr)];
+  const counts = [];
+  for (let item of uniqueArray) {
+    let counter = 0;
+    arr.forEach((element) => {
+      if (element === item) {
+        counter++;
+      }
+    });
+    counts.push(counter);
+  }
+  const result = {};
+  for (let i = 0; i < uniqueArray.length; i++) {
+    result[uniqueArray[i]] = counts[i];
+  }
+  return result;
 }
 
 export { countOccurrences };
+
+// optimal
+// function countOccurrences(arr = []) {
+//   const counts = {};
+//   for (const num of arr) {
+//     counts[num] = (counts[num] || 0) + 1;
+//   }
+//   return counts;
+// }

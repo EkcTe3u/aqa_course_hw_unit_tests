@@ -21,13 +21,14 @@ const words = [
 const vowels = 'aeiou';
 
 function checkVowels(word) {
-  let counterVowels = 0;
-  for (let i = 0; i < word.length; i++) {
-    if (vowels.includes(word[i])) {
-      counterVowels++;
-    }
-  }
-  return counterVowels;
+  // let counterVowels = 0;
+  // for (let i = 0; i < word.length; i++) {
+  //   if (vowels.includes(word[i])) {
+  //     counterVowels++;
+  //   }
+  // }
+  // return counterVowels;
+  return word.split('').filter((char) => vowels.includes(char)).length;
 }
 
 function sortedByVowels(words) {

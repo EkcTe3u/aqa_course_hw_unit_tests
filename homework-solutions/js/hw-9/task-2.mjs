@@ -37,8 +37,9 @@ function updateCharacter(name, newCharacter) {
   if (getCharacter(name) === undefined) {
     throw new Error();
   }
-  findCharacter.name = newCharacter.name;
-  findCharacter.age = newCharacter.age;
+  findCharacter.name = newCharacter.name === undefined ? findCharacter.name : newCharacter.name;
+  findCharacter.age = newCharacter.age === undefined ? findCharacter.age : newCharacter.age;
+
   return characters;
 }
 
@@ -47,7 +48,7 @@ function removeCharacter(name) {
   if (index === -1) {
     throw new Error();
   }
-  characters.splice(1, 1);
+  characters.splice(index, 1);
   return characters;
 }
 
